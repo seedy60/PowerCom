@@ -1,0 +1,2 @@
+"""PowerCom sound playback support."""
+

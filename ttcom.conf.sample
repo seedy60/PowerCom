@@ -1,0 +1,65 @@
+; PowerCom server configuration file.
+;
+; Blank lines and lines beginning with ";" or "#" are ignored.
+; A server is defined by a [server <shortname>] section.
+; The section must include a "host" key for the server's hostname or IP.
+; Other possible keys include username, password, tcpport, udpport,
+; and any other keys honorred by Teamtalk servers.
+; Additional special keys that are not sent to servers:
+;	encrypted: 1 for an encrypted (professional) TeamTalk server, 0 for a regular server.
+;		Just add encrypted=1 to any pro server's configuration.
+;		True and False also work in place of 1 and 0.
+;	autoLogin: 1 for auto login, 0 for manual only.
+;		2 means log in after kick. Use with care; this could upset people
+;		but has been used by the original TTCom author to deal with server attacks,
+;		where kicking off all clients including this client is a common attack element.
+;	hidden: Decides whether this server is included in allSum and shortSum.
+;		0 yes, 1 no.
+;	silent: Determine when this server prints events as they occur.
+;		0 always, 1 only when current server, 2 never.
+;		Some events print anyway, unless silent = 3.
+;		these are messages, broadcasts, server property changes, connects, and disconnects.
+;		Some things print regardless of silent setting;
+;		these are server errors, this user's channel joins/leaves, kicks, and PowerCom-generated output.
+;
+; There can also be sections like [include sect1],
+; which can be included in a server section with an include=sect1 line.
+; Include= lines can include multiple sections, e.g.,
+; include=sect1,sect2,sect3.
+
+; Default values for all servers that don't override them.
+[server defaults]
+autoLogin=0
+hidden=0
+silent=0
+nickname=PowerCom User
+speech=true
+speechEngine=auto
+speechInterrupt=true
+speechVoice=-1
+sounds=true
+soundPack=default
+soundVolume=100
+playbackType=overlapping
+notifyLogInOut=true
+notifyMessage=true
+systemNotify=false
+ntfy=false
+ntfyUrl=https://ntfy.sh
+prowl=false
+mgNotify=false
+pushover=false
+; pushoverPriority accepts -2, -1, 0, 1, or 2. Priority 2 also requires
+; pushoverRetry of at least 30 seconds and pushoverExpire of at most 10800 seconds.
+log=true
+maxLogSize=4
+maxLogFiles=5
+
+; Example server entry, for the official US server.
+; Note that some official and professional servers require a Bearware web login.
+; Consult the TTCom manual for instructions on how to set this up.
+[server pub_US]
+autoLogin=0
+host=tt5us.bearware.dk
+tcpport=10335
+username=bearware

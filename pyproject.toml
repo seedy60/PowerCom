@@ -1,0 +1,17 @@
+[project]
+name = "powercom"
+version = "0.1.0"
+description = "PowerCom TeamTalk text client with built-in speech, sounds, notifications, and logging."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "notify-py>=0.3.43",
+    "ntfpy>=0.0.12",
+    "prismatoid>=0.16.1",
+    "pyinstaller>=6.20.0",
+    "pyprowl>=3.0.1",
+    "pywin32>=311; sys_platform == 'win32'",
+    "sound_lib @ git+https://github.com/samtupy/sound_lib_macos_fixes.git",
+    "watchdog>=6.0.0",
+    "wxpython>=4.2.1",
+]
