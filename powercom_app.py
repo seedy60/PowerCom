@@ -18,7 +18,7 @@ def main() -> None:
     from TTComCmd import TTComCmd
 
     conf.name = "PowerCom"
-    conf.version = "2517.1"
+    conf.version = "2519"
     # Keep args out of the cmd system.
     # If -c is present, all subsequent args will be sent to the cmd system as a command.
     del sys.argv[1:]
