@@ -4,7 +4,8 @@ if not defined UV_CACHE_DIR set "UV_CACHE_DIR=.uv-cache"
 uv sync
 if errorlevel 1 exit /b %errorlevel%
 
-uv run pyinstaller --clean --noconfirm --hidden-import=notifypy --hidden-import=ntfpy --hidden-import=prism --hidden-import=prism.core --hidden-import=prism.lib --hidden-import=logging.handlers --hidden-import=pyprowl --hidden-import=sound_lib --hidden-import=sound_lib.output --hidden-import=sound_lib.stream --hidden-import=watchdog --hidden-import=watchdog.observers --hidden-import=wx --hidden-import=wx.adv --hidden-import=powercom_config --hidden-import=powercom_config_model --collect-binaries=prism --collect-binaries=sound_lib --upx-dir=C:\UPX powercom.py
+rem Hidden imports and binary collection live in powercom.spec.
+uv run pyinstaller --clean --noconfirm --upx-dir=C:\UPX powercom.spec
 if errorlevel 1 exit /b %errorlevel%
 
 set "DIST_DIR=dist\powercom"
